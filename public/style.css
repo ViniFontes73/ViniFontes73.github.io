@@ -1,0 +1,11 @@
+/* Esconde o menu de dispositivos móveis inicialmente */
+#mobile-menu {
+    display: none;
+}
+
+/* Exibe o menu quando o input é checado (clicado) */
+#menu-toggle:checked + label + #mobile-menu {
+    display: block;
+}
+
+/* Adicione estilos de posicionamento e formatação conforme necessário */
