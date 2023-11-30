@@ -92,8 +92,16 @@
     .SOBRE{
       color: white;
     }
-
+    h2{
+      font-weight: 600;
+    }
     .SKILL{
+      color: white;
+      font-weight: 700;
+      
+    
+    }
+    .Projetos{
       color: white;
     }
     /* meus icones */
@@ -102,12 +110,59 @@
     list-style: none; /* Remova a lista padrão de marcadores */
     padding: 0; /* Remova o preenchimento padrão da lista */
     overflow-x: auto; /* Adiciona rolagem horizontal em telas pequenas */
+
   }
 
   .icon-container {
     margin-right: 5%; /* Use uma porcentagem para tornar a margem responsiva */
   }
 
+  /* Style para card dos projetos*/
+  .card {
+    position: relative;
+    width: 286px;
+    height: 146px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  .modal iframe {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .fechar {
+    position: absolute;
+      right: 80px;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+  }
   
 
     </style>
@@ -137,6 +192,7 @@
                 <li class="nav-item">
                   <a class="nav-link active" href="#section2">Sobre</a>
                   <a class="nav-link active" href="#section3">Skills</a>
+                  <a class="nav-link active" href="#section4">Projetos</a>
                   <a class="nav-link active" href="#">Contato</a>
                   <a class="nav-link active" href="#">Institucional</a>
                 </li>
@@ -222,7 +278,7 @@
           <p>HTML</p>
         </div>
         <div class="icon-container">
-          <img src="/public/assets/Icons/icons8-tailwind-css-48.png" alt="">
+          <img src="/public/assets/Icons/icons8-tailwindcss-48.png" alt="">
           <p>TailWind</p>
         </div>
         <div class="icon-container">
@@ -264,15 +320,43 @@
       </ul>
 
     </section>
-  </main>
-      
-  </main>
+    <!-- Tentando criar um card projetos -->
+    <section id="section4" class="Projetos">
+      <!-- Conteúdo da section vai aqui -->
+      <div> 
+        <h2> Projetos</h2>
+      </div>
+      <div class="card" onclick="abrirVideo()">
+        <img src="/public/assets/Projetos/Informacoes_Salas/ProWebG6.png" alt="Cover Image">
+        <div class="overlay"></div>
+      </div>
+    
+      <div id="modal" class="modal">
+        <span class="fechar" onclick="fecharVideo()">&times;</span>
+        <iframe id="videoFrame" width="560" height="315" src="/public/assets/vídeo/testejava.mp4" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+  
   <footer class="foot">
     <!-- place footer here -->
     &copy; 2023 Portfolio. Desenvolvido por Vinicius.
   </footer>
   <!-- JavaScript Libraries -->
+  
   <script>
+    function abrirVideo() {
+    document.querySelector('.overlay').style.display = 'block';
+    document.querySelector('.modal').style.display = 'block';
+  }
+  
+function fecharVideo() {
+  document.querySelector('.overlay').style.display = 'none';
+  document.querySelector('.modal').style.display = 'none';
+  document.querySelector('#videoFrame').src = ''; // Adicione esta linha para interromper o vídeo quando o modal for fechado
+}
+
+  
     $(document).ready(function() {
         // Adiciona um evento de clique a todos os links que começam com #
         $('a[href^="#"]').on('click', function(e) {
