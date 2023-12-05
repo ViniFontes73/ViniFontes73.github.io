@@ -105,33 +105,46 @@
       color: white;
     }
     /* meus icones */
-    .skills-list {
-    display: flex;
-    list-style: none; /* Remova a lista padrão de marcadores */
-    padding: 0; /* Remova o preenchimento padrão da lista */
-    overflow-x: auto; /* Adiciona rolagem horizontal em telas pequenas */
+    #section3.SKILL {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-  }
+.skills-list {
+  display: flex;
+  list-style: none; /* Remova a lista padrão de marcadores */
+  padding: 0; /* Remova o preenchimento padrão da lista */
+  overflow-x: auto; /* Adiciona rolagem horizontal em telas pequenas */
+  max-width: 100%; /* Limita a largura da lista para evitar a barra de rolagem */
+}
 
+.icon-container {
+  box-sizing: border-box; /* Inclui a margem na largura total do elemento */
+}
+
+/* Adaptação para telas menores (celular) */
+@media (max-width: 767px) {
   .icon-container {
-    margin-right: 5%; /* Use uma porcentagem para tornar a margem responsiva */
+    margin-right: 10px; /* Ajuste o valor conforme necessário para o espaçamento desejado em telas menores */
   }
+}
 
-  /* Style para card dos projetos*/
-  .card {
-    position: relative;
-    width: 286px;
-    height: 146px;
-    overflow: hidden;
-    cursor: pointer;
+/* Adaptação para telas maiores (computador) */
+@media (min-width: 768px) {
+  .icon-container {
+    margin-right: 60px; /* Ajuste o valor conforme necessário para o espaçamento desejado em telas maiores */
   }
-  
-  .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
+}
+
+/* Para a última .icon-container em cada linha, remova a margem direita para evitar espaçamento extra */
+.icon-container:last-child {
+  margin-right: 0;
+}
+ 
+  /*Aqui começa a section 4 com meus projetos*/
   .overlay {
     position: absolute;
     top: 0;
@@ -163,6 +176,7 @@
     color: white;
     cursor: pointer;
   }
+  
   
 
     </style>
@@ -209,7 +223,7 @@
       <div class="d-md-flex align-items-center">
         <div>
           <p class="primeiro">Vinicius Fontes</p>
-          <p class="sub">Desenvolvedor Back<span class="end">edn</span> </p>
+          <p class="sub">Desenvolvedor Back<span class="end">end</span> </p>
           <p class="sub">viniciusfontesads@hotmail.com</p>
           <div class="container">
             <div class="row">
@@ -336,13 +350,13 @@
         <iframe id="videoFrame" width="560" height="315" src="/public/assets/vídeo/ProjetoCodeIgniter.mp4" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="card" onclick="abrirVideo()">
-        <img src="/public/assets/Projetos/Informacoes_Salas/ProWebG6.png" alt="Cover Image">
+        <img src="/public/assets/Projetos/TCC(1).png" alt="Cover Image">
         <div class="overlay"></div>
       </div>
     
       <div id="modal" class="modal">
         <span class="fechar" onclick="fecharVideo()">&times;</span>
-        <iframe id="videoFrame" width="560" height="315" src="/public/assets/vídeo/testejava.mp4" frameborder="0" allowfullscreen></iframe>
+        <iframe id="videoFrame" width="560" height="315" src="/" frameborder="0" allowfullscreen></iframe>
       </div>
     </section>
 
