@@ -145,38 +145,38 @@
 }
  
   /*Aqui começa a section 4 com meus projetos*/
+  /* Estilo padrão da overlay */
+  .card {
+    position: relative;
+    overflow: hidden;
+    float: left; /* Para colocar as divs lado a lado */
+    margin-right: 10px; /* Espaço entre as divs */
+  }
+
   .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: none;
+    background: rgba(0, 0, 0, 0.5); /* cor de fundo com transparência */
+    opacity: 0; /* inicialmente invisível */
+    transition: opacity 0.3s ease; /* efeito de transição para suavizar a mudança de opacidade */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  
-  .modal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+
+  /* Imagem a ser exibida durante o hover */
+  .hover-image {
+    max-width: 100%;
+    max-height: 100%;
   }
-  
-  .modal iframe {
-    width: 100%;
-    height: 100%;
+
+  /* Efeito hover: torna a overlay visível */
+  .card:hover .overlay {
+    opacity: 1;
   }
-  
-  .fechar {
-    position: absolute;
-      right: 80px;
-    font-size: 25px;
-    color: white;
-    cursor: pointer;
-  }
-  
   
 
     </style>
@@ -336,29 +336,25 @@
     </section>
     <!-- Tentando criar um card projetos -->
     <section id="section4" class="Projetos">
-      <!-- Conteúdo da section vai aqui -->
-      <div> 
-        <h2> Projetos</h2>
+      <div>
+          <h2>Projetos</h2>
       </div>
-      <div class="card" onclick="abrirVideo()">
-        <img src="/public/assets/Projetos/Informacoes_Salas/ProWebG6.png" alt="Cover Image">
-        <div class="overlay"></div>
+
+      <div class="card" onclick="openModal('TCC com exposure', 'TCC Video Description')">
+          <img src="/public/assets/Projetos/TCC com exposure.png" alt="Cover Image">
+          <div class="overlay">
+              <img class="hover-image" src="/public/assets/Projetos/TCC.png" alt="Hover Image">
+          </div>
       </div>
-    
-      <div id="modal" class="modal">
-        <span class="fechar" onclick="fecharVideo()">&times;</span>
-        <iframe id="videoFrame" width="560" height="315" src="/public/assets/vídeo/ProjetoCodeIgniter.mp4" frameborder="0" allowfullscreen></iframe>
+
+      <div class="card" onclick="openModal('ProWebG6 com exposure', 'ProWebG6 Video Description')">
+          <img src="/public/assets/Projetos/Informacoes_Salas/ProWebG6 com exposure.png" alt="Cover Image">
+          <div class="overlay">
+              <img class="hover-image" src="/public/assets/Projetos/Informacoes_Salas/HOME.png" alt="Hover Image">
+          </div>
       </div>
-      <div class="card" onclick="abrirVideo()">
-        <img src="/public/assets/Projetos/TCC(1).png" alt="Cover Image">
-        <div class="overlay"></div>
-      </div>
-    
-      <div id="modal" class="modal">
-        <span class="fechar" onclick="fecharVideo()">&times;</span>
-        <iframe id="videoFrame" width="560" height="315" src="/" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </section>
+  </section>
+
 
   
   <footer class="foot">
@@ -368,16 +364,7 @@
   <!-- JavaScript Libraries -->
   
   <script>
-    function abrirVideo() {
-    document.querySelector('.overlay').style.display = 'block';
-    document.querySelector('.modal').style.display = 'block';
-  }
-  
-function fecharVideo() {
-  document.querySelector('.overlay').style.display = 'none';
-  document.querySelector('.modal').style.display = 'none';
-  document.querySelector('#videoFrame').src = ''; // Adicione esta linha para interromper o vídeo quando o modal for fechado
-}
+
 
   
     $(document).ready(function() {

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Estilo padrão da overlay */
+        .card {
+    position: relative;
+    overflow: hidden;
+    float: left; /* Para colocar as divs lado a lado */
+    margin-right: 10px; /* Espaço entre as divs */
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* cor de fundo com transparência */
+    opacity: 0; /* inicialmente invisível */
+    transition: opacity 0.3s ease; /* efeito de transição para suavizar a mudança de opacidade */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Imagem a ser exibida durante o hover */
+  .hover-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  /* Efeito hover: torna a overlay visível */
+  .card:hover .overlay {
+    opacity: 1;
+  }
+      </style>
+      
+</head>
+<body>
+     <section id="section4" class="Projetos">
+        <div>
+            <h2>Projetos</h2>
+        </div>
+
+        <div class="card" onclick="openModal('TCC com exposure', 'TCC Video Description')">
+            <img src="/public/assets/Projetos/TCC com exposure.png" alt="Cover Image">
+            <div class="overlay">
+                <img class="hover-image" src="/public/assets/Projetos/TCC.png" alt="Hover Image">
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal('ProWebG6 com exposure', 'ProWebG6 Video Description')">
+            <img src="/public/assets/Projetos/Informacoes_Salas/ProWebG6 com exposure.png" alt="Cover Image">
+            <div class="overlay">
+                <img class="hover-image" src="/public/assets/Projetos/Informacoes_Salas/HOME.png" alt="Hover Image">
+            </div>
+        </div>
+    </section>
+
+ 
+ 
+</body>
+</html>
+
+
+
+
+<!-- Tentando criar um card projetos -->
+<section id="section4" class="Projetos">
+    <!-- Conteúdo da section vai aqui -->
+    <div> 
+      <h2> Projetos</h2>
+    </div>
+    <div class="card" onclick="abrirVideo()">
+      <img src="/public/assets/Projetos/Informacoes_Salas/ProWebG6.png" alt="Cover Image">
+      <div class="overlay"></div>
+    </div>
+  
+    <div id="modal" class="modal">
+      <span class="fechar" onclick="fecharVideo()">&times;</span>
+      <iframe id="videoFrame" width="560" height="315" src="/public/assets/vídeo/ProjetoCodeIgniter.mp4" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="card" onclick="abrirVideo()">
+      <img src="/public/assets/Projetos/TCC(1).png" alt="Cover Image">
+      <div class="overlay"></div>
+    </div>
+  
+    <div id="modal" class="modal">
+      <span class="fechar" onclick="fecharVideo()">&times;</span>
+      <iframe id="videoFrame" width="560" height="315" src="/" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+
+<footer class="foot">
+  <!-- place footer here -->
+  &copy; 2023 Portfolio. Desenvolvido por Vinicius.
+</footer>
+<!-- JavaScript Libraries -->
+
+<script>
+  function abrirVideo() {
+  document.querySelector('.overlay').style.display = 'block';
+  document.querySelector('.modal').style.display = 'block';
+}
+
+function fecharVideo() {
+document.querySelector('.overlay').style.display = 'none';
+document.querySelector('.modal').style.display = 'none';
+document.querySelector('#videoFrame').src = ''; // Adicione esta linha para interromper o vídeo quando o modal for fechado
+}
+
+
+  $(document).ready(function() {
+      // Adiciona um evento de clique a todos os links que começam com #
+      $('a[href^="#"]').on('click', function(e) {
+          e.preventDefault();
+
+          // Obtém o alvo da âncora (o valor do atributo href)
+          var target = this.hash;
+
+          // Anima a rolagem até o alvo com uma duração de 800 milissegundos
+          $('html, body').animate({
+              scrollTop: $(target).offset().top
+          }, 800, 'swing', function() {
+              // Atualiza a URL com o hash da âncora
+              window.location.hash = target;
+          });
+      });
+  });
+</script>
+
+
+<!-- Bootstrap JavaScript Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+  integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+</script>
+</body>
+
+</html>
