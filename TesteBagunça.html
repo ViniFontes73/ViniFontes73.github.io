@@ -1,151 +1,152 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria de Vídeo</title>
 
-    <style>
-        /* Estilo padrão da overlay */
-        .card {
-    position: relative;
-    overflow: hidden;
-    float: left; /* Para colocar as divs lado a lado */
-    margin-right: 10px; /* Espaço entre as divs */
-  }
+  <!-- Adicione os estilos do Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* cor de fundo com transparência */
-    opacity: 0; /* inicialmente invisível */
-    transition: opacity 0.3s ease; /* efeito de transição para suavizar a mudança de opacidade */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  <style>
+    /* Seu estilo existente... */
 
-  /* Imagem a ser exibida durante o hover */
-  .hover-image {
-    max-width: 100%;
-    max-height: 100%;
-  }
+    .card {
+      position: relative;
+      overflow: hidden;
+      float: left;
+      margin-right: 10px;
+    }
 
-  /* Efeito hover: torna a overlay visível */
-  .card:hover .overlay {
-    opacity: 1;
-  }
-      </style>
-      
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hover-video {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .card:hover .overlay {
+      opacity: 1;
+    }
+
+    /* Estilo para o botão "Mostrar Mais" usando Bootstrap */
+    .show-more-button {
+      display: none;
+      position: absolute;
+      bottom: 10px; /* Ajuste conforme necessário */
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .card:hover .show-more-button {
+      display: block;
+    }
+  </style>
+
 </head>
 <body>
-     <section id="section4" class="Projetos">
-        <div>
-            <h2>Projetos</h2>
+  <section id="section4" class="Projetos">
+    <div>
+        <h2>Projetos</h2>
+    </div>
+
+    <div class="card">
+        <img src="/public/assets/Projetos/TCC com exposure.png" alt="Cover Image">
+        <div class="overlay">
+            <video class="hover-video" controls>
+              <source src="/public/assets/vídeo/testejava.mp4" type="video/mp4">
+              Seu navegador não suporta o elemento de vídeo.
+            </video>
         </div>
+        <button class="btn btn-primary show-more-button" data-toggle="modal" data-target="#projectModal1">Mostrar Mais</button>
+    </div>
 
-        <div class="card" onclick="openModal('TCC com exposure', 'TCC Video Description')">
-            <img src="/public/assets/Projetos/TCC com exposure.png" alt="Cover Image">
-            <div class="overlay">
-                <img class="hover-image" src="/public/assets/Projetos/TCC.png" alt="Hover Image">
-            </div>
+    <div class="card">
+        <img src="/public/assets/Projetos/Informacoes_Salas/ProWebG6 com exposure.png" alt="Cover Image">
+        <div class="overlay">
+          <video class="hover-video" controls>
+            <source src="/public/assets/vídeo/ProjetoCodeIgniter.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+          </video>
         </div>
-
-        <div class="card" onclick="openModal('ProWebG6 com exposure', 'ProWebG6 Video Description')">
-            <img src="/public/assets/Projetos/Informacoes_Salas/ProWebG6 com exposure.png" alt="Cover Image">
-            <div class="overlay">
-                <img class="hover-image" src="/public/assets/Projetos/Informacoes_Salas/HOME.png" alt="Hover Image">
-            </div>
-        </div>
-    </section>
-
- 
- 
-</body>
-</html>
-
-
-
-
-<!-- Tentando criar um card projetos -->
-<section id="section4" class="Projetos">
-    <!-- Conteúdo da section vai aqui -->
-    <div> 
-      <h2> Projetos</h2>
-    </div>
-    <div class="card" onclick="abrirVideo()">
-      <img src="/public/assets/Projetos/Informacoes_Salas/ProWebG6.png" alt="Cover Image">
-      <div class="overlay"></div>
-    </div>
-  
-    <div id="modal" class="modal">
-      <span class="fechar" onclick="fecharVideo()">&times;</span>
-      <iframe id="videoFrame" width="560" height="315" src="/public/assets/vídeo/ProjetoCodeIgniter.mp4" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="card" onclick="abrirVideo()">
-      <img src="/public/assets/Projetos/TCC(1).png" alt="Cover Image">
-      <div class="overlay"></div>
-    </div>
-  
-    <div id="modal" class="modal">
-      <span class="fechar" onclick="fecharVideo()">&times;</span>
-      <iframe id="videoFrame" width="560" height="315" src="/" frameborder="0" allowfullscreen></iframe>
+        <button class="btn btn-primary show-more-button" data-toggle="modal" data-target="#projectModal2">Mostrar Mais</button>
     </div>
   </section>
 
+  <!-- Adicione o Bootstrap JS e o Popper.js (necessário para o Bootstrap) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<footer class="foot">
-  <!-- place footer here -->
-  &copy; 2023 Portfolio. Desenvolvido por Vinicius.
-</footer>
-<!-- JavaScript Libraries -->
+  <!-- Modais para mostrar mais informações usando Bootstrap -->
+  <div class="modal fade" id="projectModal1" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectModalLabel1">Agendamento de TCC</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Este projeto foi concebido por meio da utilização da Linguagem de Modelagem Unificada (UML) em um contexto profissional, com o propósito de implementar uma interface gráfica utilizando a linguagem de programação Java.</p>
 
-<script>
-  function abrirVideo() {
-  document.querySelector('.overlay').style.display = 'block';
-  document.querySelector('.modal').style.display = 'block';
-}
+          <p>Durante a execução deste trabalho, empregou-se o Sistema de Gerenciamento de Banco de Dados MySQL Workbench para a criação das tabelas necessárias. Adicionalmente, elaborou-se um diagrama de comportamento para tais tabelas, e uma visão (view) foi criada para apresentar uma representação de uma "agenda".</p>
 
-function fecharVideo() {
-document.querySelector('.overlay').style.display = 'none';
-document.querySelector('.modal').style.display = 'none';
-document.querySelector('#videoFrame').src = ''; // Adicione esta linha para interromper o vídeo quando o modal for fechado
-}
+          <p>A totalidade do código reside no ambiente do banco de dados, oferecendo funcionalidades de CRUD (Create, Read, Update, Delete), possibilitando a criação, leitura, edição e exclusão de dados. Adicionalmente, foram implementados tratamentos de exceções para a maioria das operações, conferindo robustez ao sistema e tornando-o apto para uso local.</p>
 
+          <!-- Adicione mais informações conforme necessário -->
+          <p> Para mais informações acesse o repositório <a href="https://github.com/ViniFontes73/Agendamento_TCC" target="_blank">
+            <img src="/public/assets/Icons/github-logo-36.png" alt="Logo do Projeto">
+        </a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  $(document).ready(function() {
-      // Adiciona um evento de clique a todos os links que começam com #
-      $('a[href^="#"]').on('click', function(e) {
-          e.preventDefault();
+  <div class="modal fade" id="projectModal2" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel2" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectModalLabel2">Projeto de Histórico de Salas</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+    <p>O Projeto de Histórico de Salas consiste na geração de códigos QR exclusivos para cada sala, com o propósito de afixar esses códigos nas portas, proporcionando acesso imediato aos usuários para visualizarem informações pertinentes a cada sala específica.</p>
 
-          // Obtém o alvo da âncora (o valor do atributo href)
-          var target = this.hash;
+    <p>A concepção e execução desse projeto foram realizadas de forma colaborativa em um ambiente de trabalho em grupo. As responsabilidades foram distribuídas entre as equipes de desenvolvimento de backend e frontend. Utilizamos as tecnologias CodeIgniter e PHP para o backend, enquanto o banco de dados MySQL foi administrado por meio do PhpMyAdmin. Adicionalmente, empregamos a abordagem de transferência de arquivos via FTP e SSH para a implementação do projeto em nosso ambiente de hospedagem.</p>
 
-          // Anima a rolagem até o alvo com uma duração de 800 milissegundos
-          $('html, body').animate({
-              scrollTop: $(target).offset().top
-          }, 800, 'swing', function() {
-              // Atualiza a URL com o hash da âncora
-              window.location.hash = target;
-          });
-      });
-  });
-</script>
+    <p>O sistema conta com funcionalidades cruciais para a administração, permitindo que o administrador crie e exclua salas sem a necessidade de acesso direto ao banco de dados, simplificando assim as operações essenciais para a gestão eficaz do sistema.</p>
 
+    <!-- Adicione o link com o logo e redirecionamento para o repositório Git -->
+    <p> Para mais informações acesse o repositório <a href="https://github.com/GabrielMagnago18/ProgWeb_G6" target="_blank">
+      <img src="/public/assets/Icons/github-logo-36.png" alt="Logo do Projeto">
+  </a></p>
+          <!-- Adicione mais informações conforme necessário -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<!-- Bootstrap JavaScript Libraries -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-  integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-</script>
 </body>
-
 </html>
