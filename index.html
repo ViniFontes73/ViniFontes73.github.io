@@ -20,6 +20,7 @@
     <style>
         body{
             background-color: #1f2937;
+            padding-top: 5%;
             
         }
         .navbar-brand {
@@ -67,18 +68,20 @@
       }
       /* Adicione estas classes para a imagem */
       .profile-image {
-      width: 25%;
-      height: 25%;
-      border-radius: 30%;
-      margin-top: 10%;
-      margin-left: 30%;
-    }
-    /* Adicione esta regra de mídia para dispositivos móveis */
-    @media (max-width: 767px) {
-      .profile-image {
-        display: none; /* Oculta a imagem em dispositivos móveis */
-      }
-    }
+            width: 100%;
+            max-width: 70%;
+            border-radius: 30%;
+        }
+        .content {
+            text-align: center;
+        }
+
+        /* Adicione estilos para ajustar o layout em telas menores */
+        @media (max-width: 768px) {
+            .profile-image {
+                margin-bottom: 10px;
+            }
+        }
     .foot{
       text-align: center;
       color: white;
@@ -89,12 +92,7 @@
     margin: 50px 0; /* Adiciona espaço entre as seções */
     
 }
-    .SOBRE{
-      color: white;
-    }
-    h2{
-      font-weight: 600;
-    }
+    
     .SKILL{
       color: white;
       font-weight: 700;
@@ -104,6 +102,20 @@
     .Projetos{
       color: white;
     }
+    #section2 {
+            text-align: center;
+            padding: 20px;
+            max-width: 600px; /* Define a largura máxima da seção */
+            margin: 0 auto; /* Centraliza a seção na página */
+            font-weight: lighter;
+          }
+    .SOBRE{
+      color: white;
+    }
+    h1{
+      font-weight: 700;
+      
+    }      
     /* meus icones */
     #section3.SKILL {
   display: flex;
@@ -230,27 +242,23 @@
       </nav>
   </header>
   <main>
-    <section id="section1" class="QuemSOU">  <!-- O ID serve para meu Jquery identificar -->
-      <div class="d-md-flex align-items-center">
-        <div>
-          <p class="primeiro">Vinicius Fontes</p>
-          <p class="sub">Desenvolvedor Back<span class="end">end</span> </p>
-          <p class="sub">viniciusfontesads@hotmail.com</p>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <a href="/public/assets/Vinicius Fontes.CV.pdf" download class="btn btn-primary">Download CV</a>
+    <section id="section1" class="QuemSOU">
+      <div class="container content">
+          <div class="row">
+              <div class="col-md-6 order-md-2">
+                  <!-- Ordem invertida em telas menores -->
+                  <img src="/public/tesste2.jpg" alt="Imagem do perfil" class="profile-image">
               </div>
-              <div class="col-md-6">
-                <button type="button" class="btn btn-outline-custom">Entrar em contato</button>
+              <div class="col-md-6 order-md-1">
+                  <p class="primeiro">Vinicius Fontes</p>
+                  <p class="sub">Desenvolvedor Back<span class="end">end</span> </p>
+                  <p class="sub">viniciusfontesads@hotmail.com</p>
+                  <a href="/public/assets/Vinicius Fontes.CV.pdf" download class="btn btn-primary">Download CV</a>
+                  <button type="button" class="btn btn-outline-custom">Entrar em contato</button>
               </div>
-            </div>
           </div>
-        </div>
-        <!-- Adicione a imagem aqui -->
-        <img src="/public/tesste2.jpg" alt="Imagem do perfil" class="profile-image  ">
       </div>
-    </section>
+  </section>
     <section id="section2" class="SOBRE">
         <div>
 
