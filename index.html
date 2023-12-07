@@ -101,6 +101,7 @@
     }
     .Projetos{
       color: white;
+      text-align: center;
     }
     #section2 {
             text-align: center;
@@ -115,7 +116,8 @@
     h1{
       font-weight: 700;
       
-    }      
+    }
+         
     /* meus icones */
     #section3.SKILL {
   display: flex;
@@ -252,7 +254,7 @@
               <div class="col-md-6 order-md-1">
                   <p class="primeiro">Vinicius Fontes</p>
                   <p class="sub">Desenvolvedor Back<span class="end">end</span> </p>
-                  <p class="sub">viniciusfontesads@hotmail.com</p>
+                  <p class="sub">viniciusfontesads@gmail.com</p>
                   <a href="/public/assets/Vinicius Fontes.CV.pdf" download class="btn btn-primary">Download CV</a>
                   <button type="button" class="btn btn-outline-custom">Entrar em contato</button>
               </div>
@@ -278,7 +280,7 @@
     </section>
 
     <section id="section3" class="SKILL">
-      <h2>Habilidades e Conhecimentos</h2>
+      <h1>Habilidades e Conhecimentos</h1>
       <ul class="skills-list">
         <div class="icon-container">
           <img src="/public/assets/Icons/icons8-mysql-50.png" alt="">
@@ -356,11 +358,12 @@
     <!-- Tentando criar um card projetos -->
     <section id="section4" class="Projetos">
       <div>
-          <h2>Projetos</h2>
+        <h1>Projetos</h1>
       </div>
-  
+      
+      <!-- Card Projeto 1 projetos -->
       <div class="card">
-          <img src="/public/assets/Projetos/TCC com exposure.png" alt="Cover Image">
+        <img src="/public/assets/Projetos/TCC com exposure.png" alt="Cover Image">
           <div class="overlay">
               <video class="hover-video" controls>
                 <source src="/public/assets/vídeo/Agendar_TCC.video-curto.mp4" type="video/mp4">
@@ -370,8 +373,9 @@
           <button class="btn btn-primary show-more-button" data-toggle="modal" data-target="#projectModal1">Mostrar Mais</button>
       </div>
   
+      <!-- Card Projeto 2 projetos -->
       <div class="card">
-          <img src="/public/assets/Projetos/Informacoes_Salas/ProWebG6 com exposure.png" alt="Cover Image">
+        <img src="/public/assets/Projetos/Informacoes_Salas/ProWebG6 com exposure.png" alt="Cover Image">
           <div class="overlay">
             <video class="hover-video" controls>
               <source src="/public/assets/vídeo/ProjetoCodeIgniter.mp4" type="video/mp4">
@@ -379,8 +383,20 @@
             </video>
           </div>
           <button class="btn btn-primary show-more-button" data-toggle="modal" data-target="#projectModal2">Mostrar Mais</button>
-      </div>
-    </section>
+        </div>
+        <!-- Card Projeto 3 SIMPAC -->
+        <div class="card">
+          <img src="/public/assets/Projetos/SIMPAC/SIMPAC.png" alt="Cover Image">
+          <div class="overlay">
+            <video class="hover-video" controls>
+              <source src="/public/assets/vídeo/SIMPAC_Amostra.mp4" type="video/mp4">
+              Seu navegador não suporta o elemento de vídeo.
+            </video>
+          </div>
+          <button class="btn btn-primary show-more-button" data-toggle="modal" data-target="#projectModal3">Mostrar Mais</button>
+        </div>
+      
+      </section>
     <!-- Aqui acontece o Mostrar mais dentro do card -->
     <div class="modal fade" id="projectModal1" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel1" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -409,6 +425,8 @@
         </div>
       </div>
     </div>
+  <!-- ========== Inicio do modal projeto 2 ========== -->
+  
   
     <div class="modal fade" id="projectModal2" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel2" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -425,7 +443,7 @@
       <p>A concepção e execução desse projeto foram realizadas de forma colaborativa em um ambiente de trabalho em grupo. As responsabilidades foram distribuídas entre as equipes de desenvolvimento de backend e frontend. Utilizamos as tecnologias CodeIgniter e PHP para o backend, enquanto o banco de dados MySQL foi administrado por meio do PhpMyAdmin. Adicionalmente, empregamos a abordagem de transferência de arquivos via FTP e SSH para a implementação do projeto em nosso ambiente de hospedagem.</p>
   
       <p>O sistema conta com funcionalidades cruciais para a administração, permitindo que o administrador crie e exclua salas sem a necessidade de acesso direto ao banco de dados, simplificando assim as operações essenciais para a gestão eficaz do sistema.</p>
-  
+      
       <!-- Adicione o link com o logo e redirecionamento para o repositório Git -->
       <p> Para mais informações acesse o repositório <a href="https://github.com/GabrielMagnago18/ProgWeb_G6" target="_blank">
         <img src="/public/assets/Icons/github-logo-36.png" alt="Logo do Projeto">
@@ -438,7 +456,43 @@
         </div>
       </div>
     </div>
+    <!-- ========== Inicio do modal projeto 3 ========== -->
+    <div class="modal fade" id="projectModal3" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel3" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="projectModalLabel3">Projeto Para Avaliar Trabalho Do SIMPAC</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>No nosso projeto em grupo, embarcamos em uma simulação empresarial completa, desenvolvendo uma empresa fictícia e explorando todas as nuances, desde a documentação até a implementação de uma metodologia ágil, utilizando a ferramenta Scrum para otimizar nossa organização. Nosso desafio era criar uma solução inovadora: um aplicativo ou aplicação para avaliação de trabalhos no SIMPAC de maneira eficiente, proporcionando resultados imediatos.</p>
 
+              <p> No meu papel fundamental nesse projeto, liderei a implementação da metodologia Scrum, organizando o Trello, estabelecendo backlogs e definindo prazos. Além disso, conduzi reuniões, registrando atas para garantir uma comunicação eficaz dentro da equipe.</p>
+              
+                <p> Assumi o papel de Product Owner (PO), conduzindo a primeira reunião com o cliente e documentando minuciosamente as discussões, transmitindo detalhes cruciais para a equipe e esclarecendo a visão do produto.</p>
+              
+                  <p>Posteriormente, atuei como Designer, iniciando os frames e desenvolvendo o protótipo mobile, que tive a oportunidade de finalizar, contribuindo significativamente para uma versão final impactante.</p>
+              
+                    <p>Como Analista de Sistemas, dediquei-me à elaboração detalhada do relatório web, criando fluxogramas, wireframes e conduzindo a apresentação do produto. Minha contribuição abrangeu desde a concepção até a implementação, garantindo uma solução abrangente e bem estruturada para o desafio proposto.</p>
+              
+              
+              
+                      <p> Agradeço pela oportunidade de compartilhar essa jornada de colaboração e aprendizado, demonstrando nosso comprometimento com a excelência e a inovação em cada etapa do processo.</p>
+      
+      <!-- Adicione o link com o logo e redirecionamento para o repositório Git -->
+      <p> Para mais informações e detalhes sobre o projeto, convido você a explorar o repositório<a href="https://github.com/GabrielMagnago18/ProgWeb_G6" target="_blank">
+        <img src="/public/assets/Icons/github-logo-36.png" alt="Logo do Projeto">
+    </a></p>
+            <!-- Adicione mais informações conforme necessário -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   
   <footer class="foot">
