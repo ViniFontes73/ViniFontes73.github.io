@@ -63,8 +63,7 @@
 
       .btn-outline-custom:hover {
         color: #fff;
-        background-color: #60a5fa;
-        border-color: #60a5fa;
+        
       }
       /* Adicione estas classes para a imagem */
       .profile-image {
@@ -113,6 +112,9 @@
     .SOBRE{
       color: white;
     }
+    .Contatos{
+      color: white;
+    }
     h1{
       font-weight: 700;
       
@@ -144,6 +146,10 @@
   .icon-container {
     margin-right: 10px; /* Ajuste o valor conforme necessário para o espaçamento desejado em telas menores */
   }
+  .botao {
+        width: 100%; /* Ocupar a largura total da tela em telas menores */
+        margin: 10px 0; /* Adicionar espaçamento superior e inferior entre os botões */
+      }
 }
 
 /* Adaptação para telas maiores (computador) */
@@ -224,7 +230,39 @@
             vertical-align: middle;
             margin-left: 5px;
         }
+    /* Aqui coomeça o estilo para a section contatos*/
+    /* Estilos para a imagem (logo) dentro do botão */
+    #section5  {
+  align-items: center;
+  text-align: center;
+    }
 
+    .botao {
+      display: inline-block;
+      text-decoration: none;
+      color: white; /* Cor do texto */
+      padding: 10px 40px; /* Espaçamento interno do botão */
+      border-radius: 5px; /* Borda arredondada */
+      font-weight: bold;
+      text-align: center;
+      margin: 10px; /* Margem entre os botões */
+      transition: transform 0.2s ease-in-out; /* Transição suave para o efeito de hover */
+    }
+
+    .botao img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px; /* Espaçamento inferior entre a imagem e o texto abaixo */
+    }
+    .contact2{
+        color: rgb(118, 118, 126);
+    }
+
+    /* Efeito de hover */
+    .botao:hover {
+      transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
+    }
     </style>
     
 </head>
@@ -253,8 +291,7 @@
                   <a class="nav-link active" href="#section2">Sobre</a>
                   <a class="nav-link active" href="#section3">Skills</a>
                   <a class="nav-link active" href="#section4">Projetos</a>
-                  <a class="nav-link active" href="#">Contato</a>
-                  <a class="nav-link active" href="#">Institucional</a>
+                  <a class="nav-link active" href="#section5">Contato</a>
                 </li>
                 
               </ul>
@@ -277,7 +314,7 @@
                   <p class="sub">Desenvolvedor Back<span class="end">end</span> </p>
                   <p class="sub">viniciusfontesads@gmail.com</p>
                   <a href="/public/assets/Vinicius Fontes.CV.pdf" download class="btn btn-primary">Download CV</a>
-                  <button type="button" class="btn btn-outline-custom">Entrar em contato</button>
+                  <a href="#section5" class="btn btn-outline-custom">Entrar em contato</a>
               </div>
           </div>
       </div>
@@ -521,12 +558,41 @@
         </div>
       </div>
     </div>
+    <section id="section5" class="Contatos">
+      <div>
+        <h1>Contatos</h1>
+      </div>
+      <!-- Links e botões para contato -->
+<!-- Botão 1 com logo e texto -->
+<a href="https://www.linkedin.com/in/vinicius-f-fontes/" target="_blank" class="botao">
+  <img src="/public/assets/Icons/linkedin-square-logo-36.png" alt="Outra Logo">
+  <div>Linkdln</div>
+  <div class=" contact2">@vinicius-f-fontes</div>
+</a>
+<!-- Botão 2 EMAIL -->
+<a href="mailto:viniciusfontesads@gmail.com?subject=" target="_blank" class="botao">
+    <img src="/public/assets/Icons/envelope-regular-36.png" alt="Outra Logo">
+    <div>Email</div>
+    <div class=" contact2">viniciusfontesads@gmail.com</div>
+</a>
+<!-- Botão 3 com WHATSAPP -->
+<a href="https://wa.me/5532984977946" target="_blank" class="botao">
+  <img src="/public/assets/Icons/phone-regular-36.png" alt="Outra Logo">
+  <div>Phone</div>
+  <div class=" contact2">+55 32 984977946</div>
+</a>
+<!-- Botão 4 com GITHUB -->
+<a href="https://github.com/ViniFontes73" target="_blank" class="botao">
+  <img src="/public/assets/Icons/github-logo-36(2).png" alt="Sua Logo">
+  <div>Github</div>
+  <div class=" contact2">@ViniFontes73</div>
+</a>
+    </section>
 
-  
-  <footer class="foot">
-    <!-- place footer here -->
-    &copy; 2023 Portfolio. Desenvolvido por Vinicius.
-  </footer>
+<footer class="foot">
+  <!-- place footer here -->
+  &copy; 2023 Portfolio. Desenvolvido por Vinicius.
+</footer>
   <!-- JavaScript Libraries -->
   
   <script>
